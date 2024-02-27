@@ -42,4 +42,10 @@ public class MovieController {
         return new ResponseEntity<>(createdMovie, HttpStatus.CREATED);
     }
 
+    @DeleteMapping
+    public ResponseEntity<Void> deleteMovie(@PathVariable Long id){
+        movieService.deleteMovie(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
 }
